@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './PasswordModal.css';
+import  GeneratePasswordPage from './GeneratePasswordPage';
 
 function App() {
   return (
@@ -25,10 +27,10 @@ function App() {
         </nav>
       </header>
       <body>
-        <button>Generate password</button>
+        <GeneratePasswordPage></GeneratePasswordPage>
       </body>
       <footer>
-        &copy; 2019 Poonam
+        &copy; 2020 Poonam
       </footer>
 
     </div>

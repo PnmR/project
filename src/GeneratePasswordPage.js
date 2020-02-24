@@ -2,6 +2,7 @@ import React from 'react';
 import PasswordModal from './PasswordModal';
 
 class GeneratePasswordPage extends React.Component {
+  pswd;
   constructor() {
     super();
     this.state = {
@@ -9,23 +10,35 @@ class GeneratePasswordPage extends React.Component {
     }
   }
 
-  show() {
+  toggle() {
     this.setState({
-      showModal: true
+      showModal: !this.state.showModal
     });
+  }
+
+  generatePassword() {
+    return "xyz";
   }
 
   render() {
     return (
-      <div>
-      <button onClick={this.show.bind(this)}>Generate password</button>
-      {
-        this.state.showModal ?
-        <PasswordModal></PasswordModal> : null
-      }
+      <div className="generatePasswordPage">
+        <button onClick={
+          () => {
+            this.toggle();
+            this.pswd = this.generatePassword();
+          }
+        }
+        >Generate password</button>
+        {
+          this.state.showModal ?
+            <PasswordModal closeModal={this.toggle.bind(this)} pswd={this.pswd}>
+            </PasswordModal> : null
+        }
       </div>
     );
   }
 }
 
 export default GeneratePasswordPage;
+//export function getPassword();

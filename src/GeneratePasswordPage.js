@@ -20,9 +20,22 @@ class GeneratePasswordPage extends React.Component {
     return "xyz";
   }
 
+
   render() {
     return (
       <div className="generatePasswordPage">
+        <section className="pswdRequirements">
+          <div className="checkboxes">
+            <input type="checkbox" name="lowerCase" value="lowerCase" className="checkboxL"></input>
+            <label for="lowerCase" className="checkboxR">Contains at least 1 lowerCase</label><br />
+            <input type="checkbox" name="upperCase" value="upperCase" className="checkboxL"></input>
+            <label for="upperCase" className="checkboxR">Contains at least 1 uppercase</label><br />
+            <input type="checkbox" name="number" value="number"></input>
+            <label for="number">Contains at least 1 number</label><br />
+            <input type="checkbox" name="symbol" value="symbol"></input>
+            <label for="symbol">Contains at least 1 symbol</label><br />
+          </div>
+        </section>
         <button onClick={
           () => {
             this.toggle();
@@ -41,4 +54,3 @@ class GeneratePasswordPage extends React.Component {
 }
 
 export default GeneratePasswordPage;
-//export function getPassword();

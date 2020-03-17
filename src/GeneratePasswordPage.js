@@ -1,5 +1,6 @@
 import React from 'react';
 import PasswordModal from './PasswordModal';
+import axios from 'axios';
 
 class GeneratePasswordPage extends React.Component {
   pswd;
@@ -21,6 +22,21 @@ class GeneratePasswordPage extends React.Component {
   }
 
 
+  handleGenerate = () =>{
+    this.toggle();
+    axios({
+      method: "post",
+      url: "http://localhost:80/password.php",
+      headers: { "content-type": "application/json" },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => this.setState({ error: error.message }));
+
+  }
+
   render() {
     return (
       <div className="generatePasswordPage">
@@ -38,8 +54,7 @@ class GeneratePasswordPage extends React.Component {
         </section>
         <button onClick={
           () => {
-            this.toggle();
-            this.pswd = this.generatePassword();
+            this.handleGenerate();
           }
         }
         >Generate password</button>

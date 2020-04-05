@@ -3,11 +3,10 @@ import PasswordModal from './PasswordModal';
 import axios from 'axios';
 
 class GeneratePasswordPage extends React.Component {
-  pswd;
   constructor() {
     super();
     this.state = {
-      showPopup: false
+      pswd: "",
     }
   }
 
@@ -17,21 +16,16 @@ class GeneratePasswordPage extends React.Component {
     });
   }
 
-  generatePassword() {
-    return "xyz";
-  }
-
-
-  handleGenerate = () =>{
+  handleGenerate = () => {
     this.toggle();
     axios({
-      method: "post",
-      url: "http://localhost:80/password.php",
-      headers: { "content-type": "application/json" },
+      method: "get",
+      url: "http://localhost/pswd",
+      headers: { "Content-Type": "application/json" },
       data: this.state
     })
       .then(result => {
-        console.log(result);
+        this.pswd = result.data;
       })
       .catch(error => this.setState({ error: error.message }));
 

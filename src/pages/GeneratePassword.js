@@ -1,6 +1,8 @@
 import React from 'react';
-import PasswordModal from './PasswordModal';
+import PasswordModal from '../components/PasswordModal';
 import axios from 'axios';
+import './GeneratePassword.css';
+
 
 class GeneratePasswordPage extends React.Component {
   constructor() {
@@ -46,12 +48,7 @@ class GeneratePasswordPage extends React.Component {
             <label for="symbol">Contains at least 1 symbol</label><br />
           </div>
         </section>
-        <button onClick={
-          () => {
-            this.handleGenerate();
-          }
-        }
-        >Generate password</button>
+        <button onClick={this.handleGenerate}>Generate password</button>
         {
           this.state.showModal ?
             <PasswordModal closeModal={this.toggle.bind(this)} pswd={this.pswd}>

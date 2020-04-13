@@ -1,15 +1,66 @@
-.App {
-  text-align: center;
+nav {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  /* background-color: #5f5f5f; */
+  background-color: #20313b;
 }
 
-nav li {
+.navSection {
+  position: absolute;
+}
+
+.leftNav {
   display: inline;
-  margin: 20px;  
+  top: 10px;
+  left: 10px;
 }
 
-.current {
-  font-weight: bolder;
-  color: rgb(175, 30, 30);
+.businessName {
+  font: 42px bold;
+}
+
+.tagLine {
+  font-size: 12px;
+}
+
+.rightNav {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  text-align: center;
+  top: 30px;
+  right: 0;
+  height: 40px;
+}
+
+.navItem {
+  width: auto;
+  padding-right: 40px;
+}
+
+.activePage {
+  border-bottom: 1px solid #ffffff;
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: black;
+}
+
+.navLink:active {
+  color: black;
+  text-decoration: none;
+}
+
+.page {
+  position: relative;
+  top: 100px;
+  border: 5px solid tomato;
 }
 
 footer {

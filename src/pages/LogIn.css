@@ -1,0 +1,60 @@
+.logIn {
+  display: inline-flex;
+  width: 100%;
+}
+
+.flexItem {
+  height: 300px;
+  width: 50%;
+  /* border: 1px solid black; */
+  padding: 5px;
+  margin:20px
+}
+
+.welcomeTitle {
+  font: normal normal bold 30px aerial;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlightedPanel{
+    margin-top: 15px;
+    width: 300px;
+    border: 1px solid #f5f5f5;
+    background-color: #f5f5f5;
+}
+
+.highlightedPanel form {
+margin-left: 15px;
+  
+}
+
+.submitInput{
+    border-radius: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    font-size: 13px;
+    padding:5px 20px;
+}
+
+.signIn{
+    height:130px;
+}
+
+.smallTitle {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.textInput {
+  display: block;
+  margin: 10px 0;
+  width: 250px;
+}
+
+.signUp{
+    height:100px;
+}
